@@ -105,5 +105,12 @@ public class ArrayListInt
         }	
         return num;
     }
-
+    
+    /**
+     * sustitulle el valor del elemento del indice seleccionado
+     */
+    public void set(int index, int num)
+    {
+        list[index] = num;
+    }
 }
