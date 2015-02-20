@@ -49,6 +49,14 @@ public class ArrayListInt
              list[index] = num;
          }
     }
+    
+    /**
+     * vacia la coleecion
+     */
+    public void clear()
+    {
+        list = new int[0];
+    }
 
 
 }
