@@ -43,7 +43,7 @@ public class ArrayListInt
      */
     public void add(int index, int num)
     {
-        //nueva lista creada
+       
         if(index < list.length)
         {
             list[index] = num;
@@ -59,7 +59,7 @@ public class ArrayListInt
     }
 
     /**
-     * /devuelve true si la colección contiene ese elemento.
+     * devuelve true si la colección contiene ese elemento.
      */
     public boolean contains(int num)
     { boolean contains = false;
@@ -74,5 +74,22 @@ public class ArrayListInt
         return contains;
     }
 
+        /**
+     * devuelve el elemento existente en la indice indicado.
+     * -1 si la posicion no es correcta
+     */
+    public int get(int index)
+    {
+        int num;
+        if(index < list.length)
+        {
+           num = list[index];
+        }
+        else
+        {
+            num = -1;
+        }	
+        return num;
+    }
 
 }
