@@ -44,7 +44,7 @@ public class ArrayListInt
     public void add(int index, int num)
     {
         int[] newList = new int[list.length + 1]; 
-        if(index < list.length)
+        if(index < list.length && index >= 0)
         {
             //guardado de elementos en las posiciones anteriores a la indicada
             for (int i = 0;   i != index; i++ )
@@ -95,7 +95,7 @@ public class ArrayListInt
     public int get(int index)
     {
         int num;
-        if(index < list.length)
+        if(index < list.length && index >= 0)
         {
             num = list[index];
         }
@@ -111,7 +111,10 @@ public class ArrayListInt
      */
     public void set(int index, int num)
     {
-        list[index] = num;
+        if(index < list.length && index >= 0)
+        {
+            list[index] = num;
+        }
     }
 
     /**
@@ -163,5 +166,16 @@ public class ArrayListInt
         return isEmpty;
     }
 
-    
+    /**
+     * elimina de la colección el elemento 
+     * que ocupa la posición especificada 
+     * y devuelve dicho elemento. 
+     * Si el valor de index no es válido,
+     * no hace nada y devuelve -1.
+     */
+    public int remove(int index)
+    {
+        return 0;
+    }
+
 }
