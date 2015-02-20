@@ -175,7 +175,42 @@ public class ArrayListInt
      */
     public int remove(int index)
     {
-        return 0;
-    }
 
+        int num = 0;
+        int[] newList = new int[list.length - 1]; 
+        //indice valido
+        if(index < list.length && index >= 0)
+        {
+
+            //guardado de elementos en las posiciones anteriores a la indicada
+            for (int i = 0;   i != index; i++ )
+            {
+                newList[i] = list[i]; 
+            }
+
+            //guardado para el retorno del elemento que se borra
+            //no es guardado en la nuava lista
+            num = list[index];
+
+            //agregado de elementos despues de la posicion indicada
+            for (int i = index+1; i < list.length;  i++ )
+            {
+                newList[i-1] = list[i];
+            }
+
+            //guardado de la nueva lista
+            list = newList;
+
+        }
+        //inidice invalido
+
+        else
+        {
+            num = -1;
+        }
+
+        return num;
+    }
+    
+   
 }
