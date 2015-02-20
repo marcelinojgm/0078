@@ -43,10 +43,24 @@ public class ArrayListInt
      */
     public void add(int index, int num)
     {
-       
+        int[] newList = new int[list.length + 1]; 
         if(index < list.length)
         {
-            list[index] = num;
+            //guardado de elementos en las posiciones anteriores a la indicada
+            for (int i = 0;   i != index; i++ )
+            {
+                newList[i] = list[i];
+            }
+            //insercion de nuevo elemento en la posicion indicada
+            newList[index] = num;
+            //agregado de elementos despues de la posicion indicada
+            for (int i = index; i < list.length;  i++ )
+            {
+                newList[i  + 1] = list[i];
+            }
+
+            //guardado de la nueva lista
+            list = newList;
         }
     }
 
@@ -74,7 +88,7 @@ public class ArrayListInt
         return contains;
     }
 
-        /**
+    /**
      * devuelve el elemento existente en la indice indicado.
      * -1 si la posicion no es correcta
      */
@@ -83,7 +97,7 @@ public class ArrayListInt
         int num;
         if(index < list.length)
         {
-           num = list[index];
+            num = list[index];
         }
         else
         {
