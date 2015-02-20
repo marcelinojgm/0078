@@ -78,7 +78,7 @@ public class ArrayListInt
     public boolean contains(int num)
     { boolean contains = false;
         //recorrido en busca del elemento
-        for (int index = 0; index < list.length; index++ )
+        for (int index = 0; index < list.length && !contains; index++ )
         {
             if (list[index]== num)
             {
@@ -105,7 +105,7 @@ public class ArrayListInt
         }	
         return num;
     }
-    
+
     /**
      * sustitulle el valor del elemento del indice seleccionado
      */
@@ -113,4 +113,43 @@ public class ArrayListInt
     {
         list[index] = num;
     }
+
+    /**
+     * devuelve el indice en el que aparece la primera ocurrencia 
+     * del elemento especificado o -1 
+     * en caso de que la colección no contenga el elemento 
+     * especificado.
+     */
+    public int indexOf(int num)
+    {
+        int index = 0;
+        //recorrido en busca del elemento en caso de que exita
+        if(contains(num))
+        {
+            boolean contains = false;
+            //recorrido en busca del elemento
+            for (int i = 0; i < list.length && !contains; i++ )
+            {
+                if (list[i]== num)
+                {
+                    //marcado como encontrado y guardado del indice
+                    contains = true;
+                    index = i;
+                }
+            }
+
+        }
+        //en caso de que no exista el elemento
+        else
+        {
+            index = -1;
+        }
+
+        return index;
+    }
+
+   
+    
+    
+
 }
