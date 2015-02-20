@@ -43,19 +43,35 @@ public class ArrayListInt
      */
     public void add(int index, int num)
     {
-         //nueva lista creada
-         if(index < list.length)
-         {
-             list[index] = num;
-         }
+        //nueva lista creada
+        if(index < list.length)
+        {
+            list[index] = num;
+        }
     }
-    
+
     /**
      * vacia la coleecion
      */
     public void clear()
     {
         list = new int[0];
+    }
+
+    /**
+     * /devuelve true si la colección contiene ese elemento.
+     */
+    public boolean contains(int num)
+    { boolean contains = false;
+        //recorrido en busca del elemento
+        for (int index = 0; index < list.length; index++ )
+        {
+            if (list[index]== num)
+            {
+                contains = true;
+            }
+        }
+        return contains;
     }
 
 
